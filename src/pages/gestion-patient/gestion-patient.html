@@ -1,0 +1,21 @@
+<!--
+  Generated template for the GestionPatientPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+>
+
+
+<ion-content padding>
+  <p text-center> Consulter les informations d'un patient</p>
+  <ion-searchbar color="primary" (ionInput)="getItems($event)"></ion-searchbar>
+  <p text-center> Ajouter des informations chez un patient</p>
+  <div padding>
+    <button ion-button  round outline block (click)="creation()">Nouveau Compte</button>
+  </div>
+  <div padding>
+    <button ion-button  round outline block (click)="ajout()">Compte Existant</button>
+  </div>
+
+</ion-content>

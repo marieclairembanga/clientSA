@@ -1,0 +1,95 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div  padding>
+    <ion-segment [(ngModel)]="opt" color="primary">
+      <ion-segment-button value="patient">
+        Patient
+      </ion-segment-button>
+      <ion-segment-button value="personnel">
+        Personnel Médical
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="opt" >
+    <form  *ngSwitchCase="'patient'">
+      <ion-item>
+        <ion-input type="text" placeholder="Login" name="fullname" #username></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Nom" name="fullname" #firstname></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="email" placeholder="Email" name="email" #email></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Contact" name="mobile" #mobile></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="password" placeholder="Mot de passe" name="password" #password></ion-input>
+      </ion-item>
+
+      <div padding>
+        <button ion-button  round outline block (click)="Register()">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+
+  <div [ngSwitch]="opt">
+    <form  *ngSwitchCase="'personnel'">
+
+      <ion-item>
+        <ion-input type="text" placeholder="Login" name="fullname" #username></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="Nom" name="fullname" #firstname></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" placeholder="poste" name="mobile" #mobile></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="email" placeholder="Email" name="email" #email></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="number" placeholder="Contact" name="mobile" #mobile></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="password" placeholder="Mot de passe" name="password" #password></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" placeholder="Code Etablissement  de Santé" name="password" #password></ion-input>
+      </ion-item>
+
+      <div padding>
+        <button ion-button  round outline block (click)="Registerpersonnel()">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+
+
+
+</ion-content>
+

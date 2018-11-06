@@ -1,0 +1,99 @@
+<!--
+  Generated template for the AjoutInfoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content padding>
+  <p text-center> Ajouter des infos sur un Patient</p>
+  <div  padding>
+    <ion-segment [(ngModel)]="opt" color="primary">
+      <ion-segment-button value="case1">
+        Consultation
+      </ion-segment-button>
+      <ion-segment-button value="case2">
+        Hospitalisation
+      </ion-segment-button>
+      <ion-segment-button value="case3">
+        RDV
+      </ion-segment-button>
+      <ion-segment-button value="case4">
+        Examen
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="opt" >
+    <form  *ngSwitchCase="'case1'">
+
+      <ion-input  round type="date" placeholder="Date" name="date_consult" #username></ion-input>
+      <ion-input type="text" placeholder="Nom de l'établissement" name="etablis" #password></ion-input>
+      <ion-input type="text" placeholder="Symptomes" name="symptomes" #password></ion-input>
+      <ion-input type="text" placeholder="diagnostic" name="diagnostic" #password></ion-input>
+      <ion-input type="text" placeholder="Observation" name="observation" #password></ion-input>
+      <ion-input type="text" placeholder="Ordonnance" name="ordo" #password></ion-input>
+      <p text-center> chercher le patient</p>
+      <ion-searchbar color="primary" (ionInput)="getItems($event)"></ion-searchbar>
+      <div padding text-center>
+        <button ion-button round color="light" icon-right (click)="add_consultation()">
+          Ajouter<ion-icon name="log-in"></ion-icon>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div [ngSwitch]="opt">
+    <form  *ngSwitchCase="'case2'">
+      <ion-input  round type="date" placeholder="Date d'entrée" name="date_hop1" #username></ion-input>
+      <ion-input  round type="date" placeholder="Date de sortie" name="date_hop2" #username></ion-input>
+      <ion-input type="text" placeholder="Nom de l'établissement" name="etablis" #password></ion-input>
+      <ion-input type="text" placeholder="Symptomes" name="symptomes" #password></ion-input>
+      <ion-input type="text" placeholder="diagnostic" name="diagnostic" #password></ion-input>
+      <ion-input type="text" placeholder="Observation" name="observation" #password></ion-input>
+      <ion-input type="text" placeholder="traitement" name="trait" #password></ion-input>
+      <p text-center> chercher le patient</p>
+      <ion-searchbar color="primary" (ionInput)="getItems($event)"></ion-searchbar>
+      <div padding text-center>
+        <button ion-button round color="light" icon-right (click)="signIn()">
+          Ajouter<ion-icon name="log-in"></ion-icon>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div [ngSwitch]="opt">
+    <form  *ngSwitchCase="'case3'">
+      <ion-input  round type="date" placeholder="Date de rendez-vous" name="date_hop1" #username></ion-input>
+      <ion-input  round type="time" placeholder="heure de rendez-vous" name="date_hop1" #username></ion-input>
+      <ion-input type="text" placeholder="Nom de l'établissement" name="etablis" #password></ion-input>
+      <ion-input type="text" placeholder="Nom du médecin" name="symptomes" #password></ion-input>
+      <ion-input type="text" placeholder="Motif" name="diagnostic" #password></ion-input>
+      <p text-center> chercher le patient</p>
+      <ion-searchbar color="primary" (ionInput)="getItems($event)"></ion-searchbar>
+      <div padding text-center>
+        <button ion-button round color="light" icon-right (click)="signIn()">
+          Ajouter<ion-icon name="log-in"></ion-icon>
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div [ngSwitch]="opt">
+    <form  *ngSwitchCase="'case4'">
+      <ion-input  round type="date" placeholder="Date" name="date_rdv" #username></ion-input>
+      <ion-input  round type="time" placeholder="heure" name="h_rdv" #username></ion-input>
+      <ion-input type="text" placeholder="Nom de l'établissement" name="etablis" #password></ion-input>
+      <ion-input type="text" placeholder="Nom de l'examen" name="nom_exam" #password></ion-input>
+      <ion-input type="text" placeholder="resultat" name="result" #password></ion-input>
+      <p text-center> chercher le patient</p>
+      <ion-searchbar color="primary" (ionInput)="getItems($event)"></ion-searchbar>
+      <div padding text-center>
+        <button ion-button round color="light" icon-right (click)="signIn()">
+          Ajouter<ion-icon name="log-in"></ion-icon>
+        </button>
+      </div>
+    </form>
+  </div>
+</ion-content>

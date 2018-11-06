@@ -1,0 +1,75 @@
+
+<ion-content padding id="login">
+
+    <div id="logo" padding text-center>
+      <strong>Sant'alert</strong>
+    </div>
+
+    <div  padding>
+      <ion-segment [(ngModel)]="opt" color="primary">
+        <ion-segment-button value="patient">
+          Patient
+        </ion-segment-button>
+        <ion-segment-button value="personnel">
+          Personnel Médical
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+
+  <div [ngSwitch]="opt" >
+    <form  *ngSwitchCase="'patient'">
+
+      <ion-input  round type="text" placeholder="Nom" name="username" #username></ion-input>
+
+      <ion-input type="password" placeholder="Mot de passe" name="password" #password></ion-input>
+
+  <p text-right ion-text  tappable (click)="forgotPass()"><strong>Mot de passe oublié?</strong></p>
+    <div padding text-center>
+      <button ion-button round color="light" icon-right (click)="signIn()">
+        Se connecter<ion-icon name="log-in"></ion-icon>
+      </button>
+    </div>
+    </form>
+  </div>
+
+  <div [ngSwitch]="opt">
+    <form  *ngSwitchCase="'personnel'">
+
+      <ion-input  round type="text" placeholder="Nom" name="username" #username></ion-input>
+
+      <ion-input type="password" placeholder="Mot de passe" name="password" #password></ion-input>
+
+      <p text-right ion-text  tappable (click)="forgotPass()"><strong>Mot de passe oublié?</strong></p>
+      <div padding text-center>
+        <button ion-button round color="light" icon-right (click)="signIn()">
+          Se connecter<ion-icon name="log-in"></ion-icon>
+        </button>
+      </div>
+    </form>
+  </div>
+
+    <p text-center ion-text ><strong> Se connecter avec:</strong></p>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <button ion-button  round  icon-only block class="btn-facebook">
+            <ion-icon name="logo-facebook"></ion-icon>
+          </button>
+        </ion-col>
+
+        <ion-col col-6>
+          <button ion-button  round id="googlebtn" icon-only block class="btn-gplus">
+            <ion-icon name="logo-googleplus"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+  <!-- Other links -->
+  <div text-center margin-top>
+    <span ion-text tappable (click)="signUp()"><strong>Nouveau dans Sant'Alert? </strong></span>
+  </div>
+
+</ion-content>

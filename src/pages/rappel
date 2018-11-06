@@ -1,0 +1,9 @@
+I changed
+
+map((response: any) => response.json())
+to simply be:
+
+.pipe(map((response: any) => response.json()));
+I found the fix here:
+
+https://github.com/angular/angular/issues/15548#issuecomment-387009186

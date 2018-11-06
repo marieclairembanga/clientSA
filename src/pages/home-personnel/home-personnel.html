@@ -1,0 +1,19 @@
+<ion-header>
+<ion-navbar color="primary">
+  <ion-title>Sant'Alert</ion-title>
+    <button   id="right" ion-button (click)="goToparam()">
+    <ion-icon name="settings"></ion-icon>
+  </button>
+
+</ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-tabs tabsPlacement="top">
+    <ion-tab [root]="tab1Root" tabTitle="Gestion des patients "></ion-tab>
+    <ion-tab [root]="tab2Root" tabTitle="Agenda" ></ion-tab>
+    <ion-tab [root]="tab3Root" tabTitle="Contacts"></ion-tab>
+  </ion-tabs>
+</ion-content>
